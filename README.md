@@ -8,3 +8,5 @@ Just some ideas.
 Here is a link to a .pdf file of the textbook *C++: How to Program* if you guys would like to have some reference for the c++ language.
 
 [C++: How to Program](https://drive.google.com/file/d/0B2RI691ABQasRXg4blVrXzRLVjQ/edit?resourcekey=0-y87RxdID7GNBInwrl0J7-w)
+
+Please see the Projects page for more info, and maybe post any other ideas there in the same or a different project.
