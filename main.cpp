@@ -14,11 +14,13 @@ int main(){
     carDriver();
 }
 
+// Test code for customer object
 int customerDriver() {
     Customer person{"Braden Carlson","nowhere","801-111-1111",200};
     std::cout << person.getName() << ": " << person.getAddress() << " " << person.getPhoneNumber() << " " << person.getCreditScore() << std::endl;
 }
 
+// test code for car object
 int carDriver() {
     Car car{"Kia","forte", "2018", 18000};
     std::cout << car.getMake() << " " << car.getModel() << " " << car.getYear() << " " << car.getPrice() << std::endl;
