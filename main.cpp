@@ -22,6 +22,6 @@ int customerDriver() {
 
 // test code for car object
 int carDriver() {
-    Car car{"Kia","forte", "2018", 18000};
-    std::cout << car.getMake() << " " << car.getModel() << " " << car.getYear() << " " << car.getPrice() << std::endl;
+    Car car{"Kia","forte", "2018", "K12341823", 18000};
+    std::cout << car.getMake() << " " << car.getModel() << " " << car.getYear() << " " << car.getVin() << " " << car.getPrice() << std::endl;
 }
