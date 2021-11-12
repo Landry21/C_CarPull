@@ -5,15 +5,16 @@
 
 class Car {
     public:
-        Car(std::string makeIn) 
+        Car(std::string makeIn)
             : make{makeIn} {
 
         }
-        Car(std::string makeIn, std::string modelIn, std::string yearIn, double priceIn) 
+        Car(std::string makeIn, std::string modelIn, std::string yearIn, std::string vinIn, double priceIn)
             : make{makeIn}
         {
             model = modelIn;
             year = yearIn;
+            vin = vinIn;
             if (priceIn > 0) {
                 price = priceIn;
             }
@@ -36,6 +37,12 @@ class Car {
         void setYear(std::string yearIn) {
             year = yearIn;
         }
+        std::string getVin() {
+            return vin;
+        }
+        void setVin(std::string vinIn) {
+            vin = vinIn;
+        }
         double getPrice() {
             return price;
         }
@@ -46,5 +53,6 @@ class Car {
         std::string make{"None"};
         std::string model{"None"};
         std::string year{"None"};
+        std::string vin{"None"};
         double price = 0;
 };
