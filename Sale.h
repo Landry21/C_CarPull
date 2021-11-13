@@ -4,9 +4,11 @@
 //
 #include <string>
 
+#include "Customer.h"
+
 class Sale {
 private:
-    std::string customer{""};
+    Customer customer{"NO NAME", 120};
     std::string soldByEmployee{""};
     std::string dateSold{""};
     std::string carSoldVin{""};
@@ -14,7 +16,7 @@ private:
     const long taxPercentageDecimal = 0.15;
 
 public:
-    Sale(std::string customerIn, std::string soldByEmployeeIn, std::string dateSoldIn, std::string carSoldVinIn, long priceSoldAtIn){
+    Sale(Customer customerIn, std::string soldByEmployeeIn, std::string dateSoldIn, std::string carSoldVinIn, long priceSoldAtIn){
         customer = customerIn;
         soldByEmployee = soldByEmployeeIn;
         dateSold = dateSoldIn;
@@ -22,10 +24,10 @@ public:
         priceSoldAt = priceSoldAtIn;
     }
 
-    std::string getCustomer(){
+    Customer getCustomer(){
         return customer;
     }
-    void setCustomer(std::string customerIn) {
+    void setCustomer(Customer customerIn) {
         customer = customerIn;
     }
 
@@ -61,7 +63,7 @@ public:
         return priceSoldAt * taxPercentageDecimal;
     }
     long getSaleTotal(){
-        return priceSoldAt + this.getTaxAmount();
+        return priceSoldAt + priceSoldAt * taxPercentageDecimal;
     }
 
 
