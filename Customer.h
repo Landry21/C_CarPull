@@ -1,66 +1,36 @@
 
 
 #include <string>
+
+#ifndef CUSTOMER_H
+#define CUSTOMER_H
+
 #define CREDIT_MIN 120
 #define CREDIT_MAX 850
 
 class Customer {
     public:
         // Constructor that sets all instance variables.
-        Customer(std::string nameIn, std::string addressIn, std::string phoneNumberIn, int creditScore) {
-            name = nameIn;
-            address = addressIn;
-            phone_number = phoneNumberIn;
-            if (creditScore >= CREDIT_MIN && creditScore <= CREDIT_MAX) {
-                credit_score = creditScore;
-            } else {
-                credit_score = CREDIT_MIN;
-            }
-        }
+        Customer(std::string nameIn, std::string addressIn, std::string phoneNumberIn, int creditScore);
 
         // Constructor that sets only the name and the credit score of the customer.
-        Customer(std::string nameIn, int creditScore) {
-            name = nameIn;
-            if (creditScore >= CREDIT_MIN && creditScore <= CREDIT_MAX) {
-                credit_score = creditScore;
-            } else {
-                credit_score = CREDIT_MIN;
-            }
-        }
+        Customer(std::string nameIn, int creditScore);
 
         // setters and getters.
-        std::string getName() {
-            return name;
-        } 
-        std::string getAddress() {
-            return address;
-        }
-        std::string getPhoneNumber() {
-            return phone_number;
-        }
-        int getCreditScore() {
-            return credit_score;
-        }
-        void setName(std::string nameIn) {
-            name = nameIn;
-        }
-        void setAddress(std::string addressIn) {
-            address = addressIn;
-        }
-        void setPhoneNumber(std::string phoneIn) {
-            phone_number = phoneIn;
-        }
-        void setCreditScore(int creditIn) {
-            if (creditIn >= CREDIT_MIN && creditIn <= CREDIT_MAX) {
-                credit_score = creditIn;
-            } else {
-                credit_score = CREDIT_MIN;
-            }
-        }
+        std::string getName();
+        std::string getAddress();
+        std::string getPhoneNumber();
+        int getCreditScore();
+        void setName(std::string nameIn);
+        void setAddress(std::string addressIn);
+        void setPhoneNumber(std::string phoneIn);
+        void setCreditScore(int creditIn);
 
     private:
-        std::string name = "";
-        std::string address = "";
-        std::string phone_number = "";
-        int credit_score = 0;
+        std::string name;
+        std::string address;
+        std::string phone_number;
+        int credit_score;
 };
+
+#endif

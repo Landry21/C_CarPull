@@ -4,6 +4,9 @@
 //
 #include <string>
 
+#ifndef SALE_H
+#define SALE_H
+
 #include "Customer.h"
 
 class Sale {
@@ -16,56 +19,28 @@ private:
     const long taxPercentageDecimal = 0.15;
 
 public:
-    Sale(Customer customerIn, std::string soldByEmployeeIn, std::string dateSoldIn, std::string carSoldVinIn, long priceSoldAtIn){
-        customer = customerIn;
-        soldByEmployee = soldByEmployeeIn;
-        dateSold = dateSoldIn;
-        carSoldVin = carSoldVinIn;
-        priceSoldAt = priceSoldAtIn;
-    }
+    Sale(Customer customerIn, std::string soldByEmployeeIn, std::string dateSoldIn,
+      std::string carSoldVinIn, long priceSoldAtIn);
 
-    Customer getCustomer(){
-        return customer;
-    }
-    void setCustomer(Customer customerIn) {
-        customer = customerIn;
-    }
+    Customer getCustomer();
+    void setCustomer(Customer customerIn);
 
-    std::string getSoldByEmployee(){
-        return soldByEmployee;
-    }
-    void setSoldByEmployee(std::string soldByEmployeeIn){
-        soldByEmployee = soldByEmployeeIn;
-    }
+    std::string getSoldByEmployee();
+    void setSoldByEmployee(std::string soldByEmployeeIn);
 
-    std::string getDateSold(){
-        return dateSold;
-    }
-    void setDateSold(std::string dateSoldIn){
-        dateSold = dateSoldIn;
-    }
+    std::string getDateSold();
+    void setDateSold(std::string dateSoldIn);
 
-    std::string getCarSoldVin(){
-        return carSoldVin;
-    }
-    void setCarSoldVin(std::string carSoldVinIn){
-        carSoldVin = carSoldVinIn;
-    }
+    std::string getCarSoldVin();
+    void setCarSoldVin(std::string carSoldVinIn);
 
-    long getPriceSoldAt(){
-        return priceSoldAt;
-    }
-    void setPriceSoldAt(long priceSoldAtIn){
-        priceSoldAt = priceSoldAtIn;
-    }
+    long getPriceSoldAt();
+    void setPriceSoldAt(long priceSoldAtIn);
 
-    long getTaxAmount(){
-        return priceSoldAt * taxPercentageDecimal;
-    }
-    long getSaleTotal(){
-        return priceSoldAt + priceSoldAt * taxPercentageDecimal;
-    }
+    long getTaxAmount();
+    long getSaleTotal();
 
 
 };
 
+#endif 
