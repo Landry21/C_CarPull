@@ -3,6 +3,12 @@
 #include "Car.h"
 
 
+std::ostream& operator<<(std::ostream& output, Car& car) {
+    output << car.getMake() << ", " << car.getModel()<< ", " << car.getYear() << "\n"
+      << car.getVin() << "\n"
+      << car.getPrice() << std::endl;
+      return output;
+}
 
 
 Car::Car(std::string makeIn, std::string modelIn, std::string yearIn, std::string vinIn, double priceIn)

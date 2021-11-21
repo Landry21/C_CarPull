@@ -1,6 +1,7 @@
 // Car Class for CS 3160 Project
 // Braden Carlson 11/07/2021
 #include <string>
+#include <iostream>
 
 #ifndef CAR_H
 #define CAR_H
@@ -8,6 +9,7 @@
 
 
 class Car {
+    friend std::ostream& operator<<(std::ostream& output, Car& car);
     public:
         // constructor that takes in parameters for all private data members
         Car(std::string makeIn, std::string modelIn, std::string yearIn,

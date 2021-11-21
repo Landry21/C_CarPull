@@ -1,6 +1,14 @@
 
 #include "Customer.h"
 
+std::ostream& operator<<(std::ostream& output, Customer& customer) {
+    output << customer.getName() << "\n"
+      << customer.getPhoneNumber() << "\n"
+      << customer.getAddress() << "\n"
+      << customer.getCreditScore() << std::endl;
+      return output;
+}
+
 Customer::Customer(std::string nameIn, std::string addressIn, std::string phoneNumberIn, int creditScore) {
     name = nameIn;
     address = addressIn;
@@ -10,6 +18,7 @@ Customer::Customer(std::string nameIn, std::string addressIn, std::string phoneN
     } else {
         credit_score = CREDIT_MIN;
     }
+
 }
 
 // Constructor that sets only the name and the credit score of the customer.

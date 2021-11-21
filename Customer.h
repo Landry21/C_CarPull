@@ -1,6 +1,7 @@
 
 
 #include <string>
+#include <iostream>
 
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
@@ -9,6 +10,7 @@
 #define CREDIT_MAX 850
 
 class Customer {
+    friend std::ostream& operator<<(std::ostream& output, Customer& customer);
     public:
         // Constructor that sets all instance variables.
         Customer(std::string nameIn, std::string addressIn, std::string phoneNumberIn, int creditScore);
