@@ -8,15 +8,19 @@
 
 #define CREDIT_MIN 120
 #define CREDIT_MAX 850
+#define MAX_ADDRESS_LENGTH 100
+
 
 class Customer {
     friend std::ostream& operator<<(std::ostream& output, Customer& customer);
+    friend std::istream& operator>>(std::istream& input, Customer& customer);
     public:
         // Constructor that sets all instance variables.
         Customer(std::string nameIn, std::string addressIn, std::string phoneNumberIn, int creditScore);
 
         // Constructor that sets only the name and the credit score of the customer.
         Customer(std::string nameIn, int creditScore);
+        Customer();
 
         // setters and getters.
         std::string getName();

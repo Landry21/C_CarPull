@@ -21,6 +21,9 @@ int main(){
     }
     carDriver();
     customerDriver();
+    Customer cust;
+    std::cin >> cust;
+    std::cout << cust;
 }
 
 // Test code for customer object
