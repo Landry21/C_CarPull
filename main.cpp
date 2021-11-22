@@ -3,25 +3,39 @@
 //
 
 #include <iostream>
+#include <fstream>
 #include "Car.h"
 #include "Customer.h"
 
-int customerDriver();
-int carDriver();
+void customerDriver();
+void carDriver();
+
 
 int main(){
-    customerDriver();
+    std::fstream file;
+    file.open("cars.txt",std::ios::in);
+    if (file.is_open()) {
+       std::string line;
+       std::getline(file, line);
+       std::cout << line << std::endl;
+    }
     carDriver();
+    customerDriver();
+    Customer cust;
+    std::cin >> cust;
+    std::cout << cust;
 }
 
 // Test code for customer object
-int customerDriver() {
+void customerDriver() {
     Customer person{"Braden Carlson","nowhere","801-111-1111",200};
-    std::cout << person.getName() << ": " << person.getAddress() << " " << person.getPhoneNumber() << " " << person.getCreditScore() << std::endl;
+    //std::cout << person.getName() << ": " << person.getAddress() << " " << person.getPhoneNumber() << " " << person.getCreditScore() << std::endl;
+    std::cout << person;
 }
 
 // test code for car object
-int carDriver() {
-    Car car{"Kia","forte", "2018", "K12341823", 18000};
-    std::cout << car.getMake() << " " << car.getModel() << " " << car.getYear() << " " << car.getVin() << " " << car.getPrice() << std::endl;
+void carDriver() {
+    Car car{"Ford","F150", "2025", "K12341823", 45000};
+    //std::cout << car.getMake() << " " << car.getModel() << " " << car.getYear() << " " << car.getVin() << " " << car.getPrice() << std::endl;
+    std::cout << car;
 }
