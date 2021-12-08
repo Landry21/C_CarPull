@@ -12,12 +12,26 @@ void carDriver();
 
 
 int main(){
-    
-    carDriver();
-    customerDriver();
-    Customer cust;
-    std::cin >> cust;
-    std::cout << cust;
+
+    int option;
+    while (option != -1) {
+      std::cout << "Enter your choice, (-1 to quit): " << std::endl;
+      std::cout << "1. Add Car to lot.\n" << "2. Add Customer.\n" << "3. Add Sale.\n" << std::endl;
+      std::cin >> option;
+      switch (option) {
+        case 1:
+          std::cout << "1 was chosen" << std::endl;
+          break;
+        case 2:
+          std::cout << "2 was chosen" << std::endl;
+          break;
+        case 3:
+          std::cout << "3 was chosen" << std::endl;
+          break;
+        default:
+          std::cout << "select a different option" << std::endl;
+      }
+    }
 }
 
 // Test code for customer object
