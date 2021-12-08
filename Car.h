@@ -10,7 +10,7 @@
 
 class Car {
     friend std::ostream& operator<<(std::ostream& output, Car& car);
-    friend std::istream& operator>>(std::istream& inpur, Car& car);
+    friend std::istream& operator>>(std::istream& input, Car& car);
     public:
         // constructor that takes in parameters for all private data members
         Car(std::string makeIn, std::string modelIn, std::string yearIn,

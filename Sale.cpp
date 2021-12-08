@@ -1,5 +1,30 @@
 
 #include "Sale.h"
+Customer Sale::getCustomer(){
+    return customer;
+}
+
+std::ostream& operator<<(std::ostream& output, Sale& sale) {
+    output << "Customer name: " << sale.getCustomer().getName() << std::endl;
+    output << "Date: " << sale.getDateSold() << "\n" << "Price: " << sale.getPriceSoldAt() << "Sold by: " << sale.getSoldByEmployee() << std::endl;
+    return output;
+}
+
+std::istream& operator>>(std::istream& input, Sale& sale) {
+    //input >> sale.getCustomer();  /* FOR WHATEVER REASON THIS LINE WILL NOT WORK, I DONT KNOW WHY */
+    std::string dateSold, vin, employee;
+    long price;
+    std::cout << "Enter the Price: " << std::endl;
+    input >> price;
+    std::cout << "Enter the date: " << std::endl;
+    input >> dateSold;
+    std:: cout << "Enter the Employee name: " << std::endl;
+    input >> employee;
+    sale.setSoldByEmployee(employee);
+    sale.setPriceSoldAt(price);
+    sale.setDateSold(dateSold);
+    return input;
+}
 
 Sale::Sale(Customer customerIn, std::string soldByEmployeeIn, std::string dateSoldIn, std::string carSoldVinIn, long priceSoldAtIn){
     customer = customerIn;
@@ -9,9 +34,7 @@ Sale::Sale(Customer customerIn, std::string soldByEmployeeIn, std::string dateSo
     priceSoldAt = priceSoldAtIn;
 }
 
-Customer Sale::getCustomer(){
-    return customer;
-}
+
 void Sale::setCustomer(Customer customerIn) {
     customer = customerIn;
 }
