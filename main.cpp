@@ -12,13 +12,7 @@ void carDriver();
 
 
 int main(){
-    std::fstream file;
-    file.open("cars.txt",std::ios::in);
-    if (file.is_open()) {
-       std::string line;
-       std::getline(file, line);
-       std::cout << line << std::endl;
-    }
+    
     carDriver();
     customerDriver();
     Customer cust;

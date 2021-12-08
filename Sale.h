@@ -3,6 +3,7 @@
 // Sale class for CS 3150 project
 //
 #include <string>
+#include <iostream>
 
 #ifndef SALE_H
 #define SALE_H
@@ -10,6 +11,8 @@
 #include "Customer.h"
 
 class Sale {
+    friend std::ostream& operator<<(std::ostream& output, Sale& sale);
+    friend std::istream& operator>>(std::istream& input, Sale& sale);
 private:
     Customer customer{"NO NAME", 120};
     std::string soldByEmployee{""};
