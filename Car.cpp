@@ -4,12 +4,14 @@
 
 
 std::ostream& operator<<(std::ostream& output, Car& car) {
+    output << std::endl;
     output << car.getMake() << ", " << car.getModel()<< ", " << car.getYear() << "\n"
       << car.getVin() << "\n"
       << car.getPrice() << std::endl;
       return output;
 }
 std::istream& operator>>(std::istream& input, Car& car) {
+    input.clear();
     std::cout << "Please enter the cars make, model, and year:" << std::endl;
     std::string make, model, year;
     input >> make >> model >> year;

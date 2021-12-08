@@ -24,7 +24,7 @@ private:
 public:
     Sale(Customer customerIn, std::string soldByEmployeeIn, std::string dateSoldIn,
       std::string carSoldVinIn, long priceSoldAtIn);
-
+    Sale();
     Customer getCustomer();
     void setCustomer(Customer customerIn);
 

@@ -14,7 +14,9 @@ std::istream& operator>>(std::istream& input, Sale& sale) {
     //input >> sale.getCustomer();  /* FOR WHATEVER REASON THIS LINE WILL NOT WORK, I DONT KNOW WHY */
     std::string dateSold, vin, employee;
     long price;
+    input.clear();
     std::cout << "Enter the Price: " << std::endl;
+    input.clear();
     input >> price;
     std::cout << "Enter the date: " << std::endl;
     input >> dateSold;
@@ -32,6 +34,10 @@ Sale::Sale(Customer customerIn, std::string soldByEmployeeIn, std::string dateSo
     dateSold = dateSoldIn;
     carSoldVin = carSoldVinIn;
     priceSoldAt = priceSoldAtIn;
+}
+
+Sale::Sale() {
+
 }
 
 
